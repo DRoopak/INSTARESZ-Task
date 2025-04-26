@@ -153,24 +153,13 @@ if st.button("✨ Run Full Analysis"):
         final_md += f"- [{res['name']}]({res['link']})\n"
 
     # Final Download
-    # After the "Final Report" is generated:
-
-st.balloons()
-st.success("🎉 Analysis Complete! Download Options Below:")
-
-# Download Markdown
-st.download_button(
-    label="📥 Download Proposal (Markdown)",
-    data=final_md,
-    file_name="final_proposal.md",
-    mime="text/markdown"
-)
-
-# Download PDF
-pdf_file = generate_pdf(company_info, use_cases, resources)
-st.download_button(
-    label="📄 Download Proposal (PDF)",
-    data=pdf_file,
-    file_name="final_proposal.pdf",
-    mime="application/pdf"
-)
+    st.divider()
+    st.balloons()
+    st.success("🎉 Analysis Complete! Ready to Download Your Final Proposal.")
+    st.download_button(
+        label="📥 Download Final Proposal",
+        data=final_md,
+        file_name="final_proposal.md",
+        mime="text/markdown",
+        help="Download the final AI/ML use case report!"
+    )
